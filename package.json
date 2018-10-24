@@ -1,0 +1,26 @@
+{
+  "name": "midi-web-app",
+  "version": "0.1.0",
+  "description": "create, save, share",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mskalandunas/MIDIwebapp.git"
+  },
+  "keywords": [
+    "music",
+    "midi"
+  ],
+  "author": "Jacob Pernell, Mike Skalandunas <mskalandunas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mskalandunas/MIDIwebapp/issues"
+  },
+  "homepage": "https://github.com/mskalandunas/MIDIwebapp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
