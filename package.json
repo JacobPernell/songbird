@@ -11,6 +11,9 @@
   "precommit": [
     "lint"
   ],
+  "pre-push": [
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mskalandunas/MIDIwebapp.git"
@@ -49,6 +52,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "jest": "^23.6.0",
     "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
     "sass-lint": "^1.12.1",
     "webpack-stream": "^4.0.3"
   }
