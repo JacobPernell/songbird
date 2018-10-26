@@ -1,0 +1,32 @@
+{
+  "options": {
+    "merge-default-rules": false
+  },
+  "files": {
+    "include": "app/scss/**/*.*"
+  },
+  "rules": {
+    "declarations-before-nesting": 1,
+    "leading-zero": [
+        2,
+        {
+            "include": true
+        }
+    ],
+    "mixins-before-declarations": 1,
+    "no-empty-rulesets": 1,
+    "no-invalid-hex": 2,
+    "no-trailing-whitespace": 1,
+    "property-sort-order": [
+      2,
+      {
+        "order": ["alphabetical"],
+        "ignore-custom-properties": true
+      }
+    ],
+    "single-line-per-selector": 1,
+    "space-after-colon": 1,
+    "space-before-brace": 1,
+    "trailing-semicolon": 2
+  }
+}

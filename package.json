@@ -4,7 +4,7 @@
   "description": "create, save, share",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ext=.js,.html .",
+    "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,7 @@
   "devDependencies": {
     "eslint": "^5.7.0",
     "eslint-config-mosaic": "^0.1.2",
-    "eslint-plugin-html": "^4.0.6"
+    "eslint-plugin-html": "^4.0.6",
+    "sass-lint": "^1.12.1"
   }
 }
