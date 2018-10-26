@@ -4,8 +4,12 @@
   "description": "create, save, share",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "precommit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mskalandunas/MIDIwebapp.git"
@@ -22,5 +26,12 @@
   "homepage": "https://github.com/mskalandunas/MIDIwebapp#readme",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-mosaic": "^0.1.2",
+    "eslint-plugin-html": "^4.0.6",
+    "pre-commit": "^1.2.2",
+    "sass-lint": "^1.12.1"
   }
 }
