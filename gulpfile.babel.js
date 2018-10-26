@@ -45,7 +45,9 @@ gulp.task(TASKS.SASS, () => gulp.src(SOURCE.SASS, { allowEmpty: true })
     .pipe(gulp.dest(DESTINATION.DIRECTORY))
 );
 
-gulp.task(TASKS.STATIC, () => gulp.src(SOURCE.STATIC, { allowEmpty: true }).pipe(gulp.dest(`${__dirname}/${DESTINATION.DIRECTORY}`)));
+gulp.task(TASKS.STATIC, () =>
+    gulp.src(SOURCE.STATIC, { allowEmpty: true })
+        .pipe(gulp.dest(`${__dirname}/${DESTINATION.DIRECTORY}`)));
 
 gulp.task(TASKS.WEBPACK, () => gulp.src(SOURCE.JAVASCRIPT, { allowEmpty: true })
     .pipe(webpack({
@@ -65,5 +67,11 @@ gulp.task(TASKS.WATCH, () => {
     gulp.watch(WATCH_FILES.JAVASCRIPT, gulp.series([TASKS.WEBPACK]));
 });
 
-gulp.task(TASKS.BUILD, gulp.series([TASKS.CSS, TASKS.HTML, TASKS.SASS, TASKS.STATIC, TASKS.WEBPACK]));
+gulp.task(TASKS.BUILD, gulp.series([
+    TASKS.CSS,
+    TASKS.HTML,
+    TASKS.SASS,
+    TASKS.STATIC,
+    TASKS.WEBPACK
+]));
 gulp.task(TASKS.DEFAULT, gulp.series([TASKS.BUILD, TASKS.WATCH]));
