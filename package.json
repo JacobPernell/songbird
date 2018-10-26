@@ -6,10 +6,13 @@
   "scripts": {
     "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
     "start": "gulp default",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --no-cache ."
   },
   "precommit": [
     "lint"
+  ],
+  "pre-push": [
+    "test"
   ],
   "repository": {
     "type": "git",
@@ -47,7 +50,9 @@
     "gulp-remove-html-comments": "^1.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
+    "jest": "^23.6.0",
     "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
     "sass-lint": "^1.12.1",
     "webpack-stream": "^4.0.3"
   }
