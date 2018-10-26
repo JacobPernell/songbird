@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
     "start": "gulp default",
-    "test": "jest --no-cache ./**/*.test.js"
+    "test": "jest --no-cache ."
   },
   "precommit": [
     "lint"
