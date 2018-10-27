@@ -4,8 +4,10 @@
   "description": "create, save, share",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp default",
     "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
-    "start": "gulp default",
+    "nodemon": "nodemon",
+    "server": "node index.js",
     "test": "jest --no-cache ."
   },
   "precommit": [
@@ -50,6 +52,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "jest": "^23.6.0",
+    "nodemon": "^1.18.5",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
     "sass-lint": "^1.12.1",
