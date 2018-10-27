@@ -15,8 +15,7 @@ export const SOURCE = {
         'src/**/*.jpg',
         'src/**/*.png',
         'src/**/*.svg'
-    ],
-    TEMPLATES: 'src/templates/*.html'
+    ]
 };
 
 export const TARGET_BROWSERS = {
