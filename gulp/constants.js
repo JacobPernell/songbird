@@ -9,7 +9,7 @@ export const SOURCE = {
     CSS: 'src/**/*.css',
     HTML: 'src/*.html',
     JAVASCRIPT: 'src/js/index.js',
-    SASS: 'src/sass/base.scss',
+    SASS: 'src/scss/base.scss',
     STATIC: [
         'src/**/*.ico',
         'src/**/*.jpg',
