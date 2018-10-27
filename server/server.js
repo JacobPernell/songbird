@@ -10,11 +10,16 @@ class ExpressServer {
         this.app = express();
 
         this.listen = this.listen.bind(this);
+        this.setupRouter = this.setupRouter.bind(this);
         this.setStaticDirectory = this.setStaticDirectory.bind(this);
     }
 
     listen(port = DEFAULT_PORT) {
         this.app.listen(port, serverStartLogger(port));
+    }
+
+    setupRouter(endpoint, router) {
+        this.app.use(endpoint, router);
     }
 
     setStaticDirectory(directoryPath) {
