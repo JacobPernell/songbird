@@ -1,9 +1,9 @@
 'use strict';
 
 const { ExpressServer } = require(__dirname + '/server/server');
-const { PUBLIC_BUILD_PATH } = require(__dirname + '/server/constants');
+const { DIST_DIRECTORY } = require(__dirname + '/server/constants');
 
 const Server = new ExpressServer();
 
-Server.setStaticDirectory(PUBLIC_BUILD_PATH);
+Server.setStaticDirectory(__dirname + '/' + DIST_DIRECTORY);
 Server.listen(process.env.PORT);
