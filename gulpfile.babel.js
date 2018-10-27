@@ -3,7 +3,6 @@ import concatCss from 'gulp-concat-css';
 import cssNano from 'gulp-cssnano';
 import gulp from 'gulp';
 import htmlmin from 'gulp-htmlmin';
-import include from 'gulp-include';
 import rmHtmlComments from 'gulp-remove-html-comments';
 import sass from 'gulp-sass';
 import sourceMaps from 'gulp-sourcemaps';
@@ -26,8 +25,6 @@ gulp.task(TASKS.CSS, () => gulp.src(SOURCE.CSS, { allowEmpty: true })
 );
 
 gulp.task(TASKS.HTML, () => gulp.src(SOURCE.HTML, { allowEmpty: true })
-    .pipe(include())
-    .on('error', console.log) // eslint-disable-line no-console
     .pipe(htmlmin({
         collapseWhitespace: true,
         minifyCSS: true
@@ -62,7 +59,6 @@ gulp.task(TASKS.WATCH, () => {
     gulp.watch(SOURCE.CSS, gulp.series([TASKS.CSS]));
     gulp.watch(SOURCE.HTML, gulp.series([TASKS.HTML]));
     gulp.watch(SOURCE.STATIC, gulp.series([TASKS.STATIC]));
-    gulp.watch(SOURCE.TEMPLATES, gulp.series([TASKS.HTML]));
     gulp.watch(WATCH_FILES.SASS, gulp.series([TASKS.SASS]));
     gulp.watch(WATCH_FILES.JAVASCRIPT, gulp.series([TASKS.WEBPACK]));
 });
