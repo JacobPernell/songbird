@@ -3,6 +3,7 @@
 const PropTypes = require('prop-types');
 
 const { musicFixtures, userFixtures } = require('./constants');
+const { createInstancesWithFixtures } = require('./utils');
 
 class Music {
     constructor(id, sketches) {
@@ -37,9 +38,6 @@ User.propTypes = {
     id: PropTypes.number.isRequired,
     username: PropTypes.string
 };
-
-const createInstancesWithFixtures = (constructor, fixtures) =>
-    fixtures.map(fixture => new constructor({...fixture}));
 
 const musicEndpointFixtures = createInstancesWithFixtures(Music, musicFixtures);
 
