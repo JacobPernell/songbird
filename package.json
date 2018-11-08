@@ -55,6 +55,7 @@
     "nodemon": "^1.18.5",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
+    "prop-types": "^15.6.2",
     "sass-lint": "^1.12.1",
     "webpack-stream": "^4.0.3"
   }
