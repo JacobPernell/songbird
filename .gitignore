@@ -4,6 +4,9 @@
 # Build
 dist
 
+# Database
+db
+
 # Logs
 logs
 *.log

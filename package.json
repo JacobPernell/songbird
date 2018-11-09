@@ -6,6 +6,7 @@
   "scripts": {
     "gulp": "gulp default",
     "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
+    "mongo": "mongod --dbpath=./db --smallfiles",
     "nodemon": "nodemon",
     "server": "node index.js",
     "test": "jest --no-cache ."
@@ -31,7 +32,8 @@
   },
   "homepage": "https://github.com/mskalandunas/MIDIwebapp#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mongoose": "^5.3.10"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
