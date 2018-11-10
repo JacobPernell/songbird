@@ -1,15 +1,15 @@
 'use strict';
 
-const { Schema } = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const sketchSchema = new Schema({
+const sketchSchema = new mongoose.Schema({
     length: {
         required: true,
         type: Number
     },
     octave: {
         required: true,
-        type: String
+        type: Number
     },
     pitch: {
         required: true,
@@ -17,4 +17,4 @@ const sketchSchema = new Schema({
     }
 });
 
-module.exports = sketchSchema;
+module.exports = mongoose.model('Sketch', sketchSchema);

@@ -1,12 +1,18 @@
 'use strict';
 
-const { Schema } = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     authentication: {
         basic: {
-            username: String,
-            password: String
+            username: {
+                required: true,
+                type: String
+            },
+            password: {
+                required: true,
+                type: String
+            }
         }
     },
     email: {
@@ -21,4 +27,4 @@ const userSchema = new Schema({
     }
 });
 
-module.exports = userSchema;
+module.exports = mongoose.model('User', userSchema);

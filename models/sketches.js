@@ -1,8 +1,8 @@
 'use strict';
 
-const { Schema } = require('mongoose').Schema;
+const mongoose = require('mongoose');
 
-const sketchesSchema = new Schema({
+const sketchesSchema = new mongoose.Schema({
     id: {
         required: true,
         type: Number
@@ -14,4 +14,4 @@ const sketchesSchema = new Schema({
     }
 });
 
-module.exports = sketchesSchema;
+module.exports = mongoose.model('Sketches', sketchesSchema);
