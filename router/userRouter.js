@@ -9,4 +9,8 @@ Router.get('/user', (req, res) => {
     res.send(userEndpointFixtures);
 });
 
+Router.post('/user', (req, res) => {
+    res.send('you made a post');
+});
+
 module.exports = Router;

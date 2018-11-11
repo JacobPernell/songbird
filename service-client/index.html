@@ -1,0 +1,24 @@
+<!-- Rudimentary service client -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Service Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Request</h1>
+    <form>
+        <select>
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+        </select>
+        <label for="endpoint-input">Endpoint</label>
+        <input id="endpoint-input" placeholder="URL" type="text"/>
+        <button id="send-request">Send</button>
+    </form>
+    <div id="validation-errors"></div>
+    <script type="text/javascript" src="./service-client.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ class ExpressServer {
 
         this.listen = this.listen.bind(this);
         this.setupRouter = this.setupRouter.bind(this);
-        this.setStaticDirectory = this.setStaticDirectory.bind(this);
+        this.setStaticRoot = this.setStaticRoot.bind(this);
     }
 
     listen(port = DEFAULT_PORT) {
@@ -22,7 +22,11 @@ class ExpressServer {
         this.app.use(endpoint, router);
     }
 
-    setStaticDirectory(directoryPath) {
+    setStaticDirectory(endpoint, directoryPath) {
+        this.app.use(endpoint, express.static(directoryPath));
+    }
+
+    setStaticRoot(directoryPath) {
         this.app.use(express.static(directoryPath));
     }
 }
