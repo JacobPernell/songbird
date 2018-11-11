@@ -2,17 +2,17 @@
 
 const PropTypes = require('prop-types');
 
-const { musicFixtures, userFixtures } = require('./constants');
+const { sketchesFixtures, userFixtures } = require('./constants');
 const { createInstancesWithFixtures } = require('./utils');
 
-class Music {
+class Sketches {
     constructor(id, sketches) {
         this.id = id;
         this.sketches = sketches;
     }
 }
 
-Music.propTypes = {
+Sketches.propTypes = {
     id: PropTypes.number.isRequired,
     sketches: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
@@ -39,11 +39,11 @@ User.propTypes = {
     username: PropTypes.string
 };
 
-const musicEndpointFixtures = createInstancesWithFixtures(Music, musicFixtures);
+const sketchesEndpointFixtures = createInstancesWithFixtures(Sketches, sketchesFixtures);
 
 const userEndpointFixtures = createInstancesWithFixtures(User, userFixtures);
 
 module.exports = {
-    musicEndpointFixtures,
+    sketchesEndpointFixtures,
     userEndpointFixtures
 };

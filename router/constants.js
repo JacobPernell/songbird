@@ -1,6 +1,6 @@
 'use strict';
 
-const musicFixtures = [
+const sketchesFixtures = [
     {
         id: 162,
         sketches: [
@@ -68,6 +68,6 @@ const userFixtures = [
 ];
 
 module.exports = {
-    musicFixtures,
+    sketchesFixtures,
     userFixtures
 };
