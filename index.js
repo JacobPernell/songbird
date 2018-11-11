@@ -9,13 +9,13 @@ const {
     SERVICE_CLIENT_RELATIVE_PATH
 } = require(__dirname + '/server/constants');
 const { ExpressServer } = require(__dirname + '/server/server');
-const { MusicRouter, UserRouter } = require(__dirname + '/router/index');
+const { SketchesRouter, UserRouter } = require(__dirname + '/router/index');
 
 const Server = new ExpressServer();
 
 mongoose.connect(MONGO_DEV_URL);
 
-Server.setupRouter('/api/', MusicRouter);
+Server.setupRouter('/api/', SketchesRouter);
 Server.setupRouter('/', UserRouter);
 Server.setStaticDirectory(SERVICE_CLIENT_PATH, SERVICE_CLIENT_RELATIVE_PATH);
 Server.setStaticRoot(DIST_RELATIVE_PATH);
