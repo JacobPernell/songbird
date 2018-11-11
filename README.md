@@ -1,5 +1,5 @@
 # MIDIwebapp
-Web-based MIDI piano roll editor for quick music sketches
+Web-based MIDI piano roll editor for quick music sketches.
 
 ### Basic setup
 Start the server by doing the following:
