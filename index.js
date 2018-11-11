@@ -2,7 +2,12 @@
 
 const mongoose = require('mongoose');
 
-const { DIST_DIRECTORY, MONGO_DEV_URL } = require(__dirname + '/server/constants');
+const {
+    DIST_RELATIVE_PATH,
+    MONGO_DEV_URL,
+    SERVICE_CLIENT_PATH,
+    SERVICE_CLIENT_RELATIVE_PATH
+} = require(__dirname + '/server/constants');
 const { ExpressServer } = require(__dirname + '/server/server');
 const { MusicRouter, UserRouter } = require(__dirname + '/router/index');
 
@@ -12,5 +17,6 @@ mongoose.connect(MONGO_DEV_URL);
 
 Server.setupRouter('/api/', MusicRouter);
 Server.setupRouter('/', UserRouter);
-Server.setStaticDirectory(__dirname + '/' + DIST_DIRECTORY);
+Server.setStaticDirectory(SERVICE_CLIENT_PATH, SERVICE_CLIENT_RELATIVE_PATH);
+Server.setStaticRoot(DIST_RELATIVE_PATH);
 Server.listen(process.env.PORT);
