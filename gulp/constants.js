@@ -27,6 +27,11 @@ export const TARGET_BROWSERS = {
     ]
 };
 
+export const TASK_TYPES = {
+    JAVASCRIPT: 'JAVASCRIPT',
+    SERVICE_CLIENT_JAVASCRIPT: 'SERVICE_CLIENT_JAVASCRIPT'
+};
+
 export const TASKS = {
     BUILD: 'build',
     CSS: 'css',

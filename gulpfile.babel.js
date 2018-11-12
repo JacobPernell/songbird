@@ -6,15 +6,19 @@ import htmlmin from 'gulp-htmlmin';
 import rmHtmlComments from 'gulp-remove-html-comments';
 import sass from 'gulp-sass';
 import sourceMaps from 'gulp-sourcemaps';
-import webpack from 'webpack-stream';
 
 import {
     DESTINATION,
     SOURCE,
     TARGET_BROWSERS,
+    TASK_TYPES,
     TASKS,
     WATCH_FILES
 } from './gulp/constants';
+
+import { handleJavaScriptTask } from './gulp/utils';
+
+const { JAVASCRIPT, SERVICE_CLIENT_JAVASCRIPT } = TASK_TYPES;
 
 gulp.task(TASKS.CSS, () => gulp.src(SOURCE.CSS, { allowEmpty: true })
     .pipe(sourceMaps.init())
@@ -42,28 +46,13 @@ gulp.task(TASKS.SASS, () => gulp.src(SOURCE.SASS, { allowEmpty: true })
     .pipe(gulp.dest(DESTINATION.DIRECTORY))
 );
 
-gulp.task(TASKS.SERVICE_CLIENT, () => gulp
-    .src(SOURCE.SERVICE_CLIENT_JAVASCRIPT, { allowEmpty: true })
-    .pipe(webpack({
-        output: {
-            filename: DESTINATION.SERVICE_CLIENT_JAVASCRIPT
-        }
-    }))
-    .pipe(gulp.dest(DESTINATION.DIRECTORY))
-);
+gulp.task(TASKS.SERVICE_CLIENT, () => handleJavaScriptTask(SERVICE_CLIENT_JAVASCRIPT));
 
 gulp.task(TASKS.STATIC, () =>
     gulp.src(SOURCE.STATIC, { allowEmpty: true })
         .pipe(gulp.dest(`${__dirname}/${DESTINATION.DIRECTORY}`)));
 
-gulp.task(TASKS.WEBPACK, () => gulp.src(SOURCE.JAVASCRIPT, { allowEmpty: true })
-    .pipe(webpack({
-        output: {
-            filename: DESTINATION.JAVASCRIPT
-        }
-    }))
-    .pipe(gulp.dest(DESTINATION.DIRECTORY))
-);
+gulp.task(TASKS.WEBPACK, () => handleJavaScriptTask(JAVASCRIPT));
 
 gulp.task(TASKS.WATCH, () => {
     gulp.watch(SOURCE.CSS, gulp.series([TASKS.CSS]));
