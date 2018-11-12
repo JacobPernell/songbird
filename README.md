@@ -1,4 +1,4 @@
-# MIDIwebapp
+# MIDIwebapp [![Build Status](https://travis-ci.com/JacobPernell/MIDIwebapp.svg?branch=master)](https://travis-ci.com/JacobPernell/MIDIwebapp)
 Web-based MIDI piano roll editor for quick music sketches.
 
 ### Basic setup
