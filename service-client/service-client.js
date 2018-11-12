@@ -2,31 +2,44 @@
 
 const ENDPOINT_INPUT_SELECTOR = '#endpoint-input';
 const ERROR_TEXT_CLASS = 'error-text';
-const ERROR_TEXT_SELECTOR = `.${ERROR_TEXT_CLASS}`;
+const FEEDBACK_BLOCK_SELECTOR = '#feedback';
+const FEEDBACK_ELEMENT_CLASS = 'feedback';
+const FEEDBACK_ELEMENT_SELECTOR = `.${FEEDBACK_ELEMENT_CLASS}`;
 const INVALID_ENDPOINT = 'Endpoint is invalid.';
 const REQUEST_URL = 'http://localhost:3000/';
+const RESPONSE_ELEMENT_CLASS = 'response';
 const SELECT_SELECTOR = 'select';
 const SEND_REQUEST_BUTTON_SELECTOR = '#send-request';
+const SUCCESSFUL_RESPONSE = 'Request was successful.  Check the network tab for response details.';
 const VALID_ENDPOINTS = ['user'];
-const VALIDATION_ERRORS_BLOCK_SELECTOR = '#validation-errors';
 
-const clearErrorText = () => {
-    const validationErrorsBlock = document.querySelector(VALIDATION_ERRORS_BLOCK_SELECTOR);
+const clearText = () => {
+    const feedbackBlock = document.querySelector(FEEDBACK_BLOCK_SELECTOR);
 
-    if (validationErrorsBlock.children.length) {
-        const errorText = document.querySelector(ERROR_TEXT_SELECTOR);
+    if (feedbackBlock.children.length) {
+        const textElements = document.querySelector(FEEDBACK_ELEMENT_SELECTOR);
 
-        validationErrorsBlock.removeChild(errorText);
+        feedbackBlock.removeChild(textElements);
     }
 };
 
 const createErrorElement = errorText => {
     const errorTextElement = document.createElement('span');
 
-    errorTextElement.classList.add(ERROR_TEXT_CLASS);
-    errorTextElement.textContent = errorText;
+    elementCreationHandler(errorTextElement, errorText, ERROR_TEXT_CLASS);
+};
 
-    document.querySelector(VALIDATION_ERRORS_BLOCK_SELECTOR).appendChild(errorTextElement);
+const createResponseElement = responseText => {
+    const responseTextElement = document.createElement('pre');
+
+    elementCreationHandler(responseTextElement, responseText, RESPONSE_ELEMENT_CLASS);
+};
+
+const elementCreationHandler = (element, text, elementClass = '') => {
+    element.classList.add(elementClass, FEEDBACK_ELEMENT_CLASS);
+    element.textContent = text;
+
+    document.querySelector(FEEDBACK_BLOCK_SELECTOR).appendChild(element);
 };
 
 const handleSend = e => {
@@ -38,7 +51,7 @@ const handleSend = e => {
     if (inputIsValidEndpoint(endpoint)) {
         const url = REQUEST_URL + endpoint;
 
-        clearErrorText();
+        clearText();
 
         fetch(url, {
             method,
@@ -48,6 +61,7 @@ const handleSend = e => {
             }
         })
             .then(res => res.json())
+            .then(createResponseElement(SUCCESSFUL_RESPONSE))
             .catch(handleValidationErrors);
     }
 
@@ -57,13 +71,11 @@ const handleSend = e => {
 };
 
 const handleValidationErrors = error => {
-    clearErrorText();
+    clearText();
     createErrorElement(error);
 };
 
-const inputIsValidEndpoint = input => {
-    return VALID_ENDPOINTS.includes(input);
-};
+const inputIsValidEndpoint = input => VALID_ENDPOINTS.includes(input);
 
 const button = document.querySelector(SEND_REQUEST_BUTTON_SELECTOR);
 
