@@ -22,10 +22,6 @@ class ExpressServer {
         this.app.use(endpoint, router);
     }
 
-    setStaticDirectory(endpoint, directoryPath) {
-        this.app.use(endpoint, express.static(directoryPath));
-    }
-
     setStaticRoot(directoryPath) {
         this.app.use(express.static(directoryPath));
     }

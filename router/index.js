@@ -1,9 +1,11 @@
 'use strict';
 
-const SketchesRouter = require(__dirname + '/sketchesRouter');
-const UserRouter = require(__dirname + '/userRouter');
+const ServiceClientRouter = require(__dirname + '/service-client-router');
+const SketchesRouter = require(__dirname + '/sketches-router');
+const UserRouter = require(__dirname + '/user-router');
 
 module.exports = {
+    ServiceClientRouter,
     SketchesRouter,
     UserRouter
 };

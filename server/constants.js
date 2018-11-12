@@ -5,16 +5,10 @@ const DIST_DIRECTORY = 'dist';
 const DIST_RELATIVE_PATH = `./${DIST_DIRECTORY}`;
 const LISTENING = 'Listening on';
 const MONGO_DEV_URL = 'mongod://localhost/midi_web_app_db';
-const SERVICE_CLIENT_DIRECTORY = 'service-client';
-const SERVICE_CLIENT_PATH = `/${SERVICE_CLIENT_DIRECTORY}`;
-const SERVICE_CLIENT_RELATIVE_PATH = `.${SERVICE_CLIENT_PATH}`;
 
 module.exports = {
     DEFAULT_PORT,
     DIST_RELATIVE_PATH,
     LISTENING,
-    MONGO_DEV_URL,
-    SERVICE_CLIENT_DIRECTORY,
-    SERVICE_CLIENT_PATH,
-    SERVICE_CLIENT_RELATIVE_PATH
+    MONGO_DEV_URL
 };

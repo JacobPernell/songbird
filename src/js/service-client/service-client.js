@@ -42,7 +42,7 @@ const elementCreationHandler = (element, text, elementClass = '') => {
     document.querySelector(FEEDBACK_BLOCK_SELECTOR).appendChild(element);
 };
 
-const handleClick = e => {
+export const handleClick = e => {
     e.preventDefault();
 
     const method = document.querySelector(SELECT_SELECTOR).value;
