@@ -11,7 +11,7 @@ const RESPONSE_ELEMENT_CLASS = 'response';
 const SELECT_SELECTOR = 'select';
 const SEND_REQUEST_BUTTON_SELECTOR = '#send-request';
 const SUCCESSFUL_RESPONSE = 'Request was successful.  Check the network tab for response details.';
-const VALID_ENDPOINTS = ['user'];
+const VALID_ENDPOINTS = ['api/sketches', 'user'];
 
 const clearText = () => {
     const feedbackBlock = document.querySelector(FEEDBACK_BLOCK_SELECTOR);
@@ -42,7 +42,7 @@ const elementCreationHandler = (element, text, elementClass = '') => {
     document.querySelector(FEEDBACK_BLOCK_SELECTOR).appendChild(element);
 };
 
-const handleSend = e => {
+const handleClick = e => {
     e.preventDefault();
 
     const method = document.querySelector(SELECT_SELECTOR).value;
@@ -52,14 +52,7 @@ const handleSend = e => {
         const url = REQUEST_URL + endpoint;
 
         clearText();
-
-        fetch(url, {
-            method,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-type': 'application/json'
-            }
-        })
+        REQUEST_MAP[method](url)
             .then(res => res.json())
             .then(createResponseElement(SUCCESSFUL_RESPONSE))
             .catch(handleValidationErrors);
@@ -68,6 +61,32 @@ const handleSend = e => {
     else {
         handleValidationErrors(INVALID_ENDPOINT);
     }
+};
+
+const handleGET = url => {
+    return fetch(url, {
+        method: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        }
+    });
+};
+
+const handlePOST = (url, body = '{}') => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(JSON.parse(body))
+    });
+};
+
+const REQUEST_MAP = {
+    GET: handleGET,
+    POST: handlePOST
 };
 
 const handleValidationErrors = error => {
@@ -79,4 +98,4 @@ const inputIsValidEndpoint = input => VALID_ENDPOINTS.includes(input);
 
 const button = document.querySelector(SEND_REQUEST_BUTTON_SELECTOR);
 
-button.addEventListener('click', handleSend, false);
+button.addEventListener('click', handleClick, false);
