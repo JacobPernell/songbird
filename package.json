@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mskalandunas/MIDIwebapp.git"
+    "url": "git+https://github.com/JacobPernell/songbird.git"
   },
   "keywords": [
     "music",
@@ -28,9 +28,9 @@
   "author": "Jacob Pernell, Mike Skalandunas <mskalandunas@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mskalandunas/MIDIwebapp/issues"
+    "url": "https://github.com/JacobPernell/songbird/issues"
   },
-  "homepage": "https://github.com/mskalandunas/MIDIwebapp#readme",
+  "homepage": "https://github.com/JacobPernell/songbird#readme",
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.3.10"

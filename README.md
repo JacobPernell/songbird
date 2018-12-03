@@ -1,4 +1,4 @@
-# MIDIwebapp [![Build Status](https://travis-ci.com/JacobPernell/MIDIwebapp.svg?branch=master)](https://travis-ci.com/JacobPernell/MIDIwebapp)
+# Songbird [![Build Status](https://travis-ci.com/JacobPernell/songbird.svg?branch=master)](https://travis-ci.com/JacobPernell/songbird)
 Web-based MIDI piano roll editor for quick music sketches.
 
 ### Basic setup
