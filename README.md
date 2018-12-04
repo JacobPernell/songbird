@@ -8,12 +8,11 @@ Start the server by doing the following:
 2.  Install [mongodb](https://treehouse.github.io/installation-guides/mac/mongo-mac.html)
     * If you have issues installing mongo, try the steps found [here](https://github.com/Homebrew/brew/issues/3228#issuecomment-332679274)
 3.  `npm install`
-4.  Create a `db` directory
-5.  `npm run mongo`
+4.  `npm run mongo`
     * This always needs to happen before the server is run
-6.  `npm run gulp`
+5.  `npm run gulp`
     * This builds the front end
-7.  `npm run server`
+6.  `npm run server`
 
 If you'd like to use a specific port, use the `PORT` environmental variable.
 
