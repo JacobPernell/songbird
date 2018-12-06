@@ -16,4 +16,5 @@ export const SELECT_SELECTOR = 'select';
 export const SEND_REQUEST_BUTTON_SELECTOR = '#send-request';
 export const SUCCESSFUL_RESPONSE = 'Request was successful.  ' +
     'Check the network tab for response details.';
-export const VALID_ENDPOINTS = ['api/sketches', 'user'];
+export const TEXT_AREA_SELECTOR = '.service-client__form-textarea';
+export const VALID_ENDPOINTS = ['api/sketches', 'users'];

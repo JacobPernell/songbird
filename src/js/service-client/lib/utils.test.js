@@ -31,7 +31,7 @@ describe('handleValidationErrors', () => {
 
 describe('inputIsValidEndpoint', () => {
     it('should return true if the input matches a route', () => {
-        ['user', 'api/sketches'].forEach(route => expect(inputIsValidEndpoint(route)).toBe(true));
+        ['users', 'api/sketches'].forEach(route => expect(inputIsValidEndpoint(route)).toBe(true));
     });
 
     it('should return false if the input does not match a route', () => {

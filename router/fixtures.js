@@ -2,7 +2,7 @@
 
 const PropTypes = require('prop-types');
 
-const { sketchesFixtures, userFixtures } = require('./constants');
+const { sketchesFixtures } = require('./constants');
 const { createInstancesWithFixtures } = require('./utils');
 
 class Sketches {
@@ -25,25 +25,8 @@ Sketches.propTypes = {
     }))
 };
 
-class User {
-    constructor({ email, id, username }) {
-        this.email = email;
-        this.id = id;
-        this.username = username;
-    }
-}
-
-User.propTypes = {
-    email: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    username: PropTypes.string
-};
-
 const sketchesEndpointFixtures = createInstancesWithFixtures(Sketches, sketchesFixtures);
 
-const userEndpointFixtures = createInstancesWithFixtures(User, userFixtures);
-
 module.exports = {
-    sketchesEndpointFixtures,
-    userEndpointFixtures
+    sketchesEndpointFixtures
 };

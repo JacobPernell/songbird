@@ -1,4 +1,4 @@
-export const handleGET = url => {
+export const handleGET = ({ url }) => {
     return fetch(url, {
         method: 'GET',
         headers: {
@@ -8,7 +8,7 @@ export const handleGET = url => {
     });
 };
 
-export const handlePOST = (url, body = '{}') => {
+export const handlePOST = ({ url, body = {} }) => {
     return fetch(url, {
         method: 'POST',
         headers: {
