@@ -1,5 +1,9 @@
 'use strict';
 
+const RESPONSE_MESSAGES = {
+    USER_CREATED: 'User created'
+};
+
 const sketchesFixtures = [
     {
         id: 162,
@@ -55,5 +59,6 @@ const sketchesFixtures = [
 ];
 
 module.exports = {
+    RESPONSE_MESSAGES,
     sketchesFixtures
 };

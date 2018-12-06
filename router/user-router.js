@@ -2,14 +2,19 @@
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const { handleServerError } = require(__dirname + '/../lib/errors');
+const {
+    RESPONSE_MESSAGES: {
+        USER_CREATED
+    }
+} = require(__dirname + '/constants');
 const Router = express.Router();
 const User = require(__dirname + '/../models/user');
 
 Router.get('/users', (req, res) => {
     User.find({}, (err, data) => {
         if (err) {
-            // replace with error handler
-            console.log('Handle error'); // eslint-disable-line no-console
+            return handleServerError(err);
         }
 
         res.json(data);
@@ -19,17 +24,14 @@ Router.get('/users', (req, res) => {
 Router.post('/users', bodyParser.json(), (req, res) => {
     const user = new User(req.body);
 
-    user.save((err, data) => {
+    user.save(err => {
         if (err) {
-            // replace with error handler
-            console.log('Handle error'); // eslint-disable-line no-console
-            return;
+            return handleServerError(err);
         }
 
-        console.log(data); // eslint-disable-line no-console
         res.json({
             success: true,
-            message: 'Success'
+            message: USER_CREATED
         });
     });
 });
