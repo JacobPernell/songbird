@@ -54,20 +54,6 @@ const sketchesFixtures = [
     }
 ];
 
-const userFixtures = [
-    {
-        email: 'jordan@jordanmusic.com',
-        id: 162,
-        username: 'jordan@jordanmusic.com' // default to email if username is undefined
-    },
-    {
-        email: 'jacob@jacobpernell.music.com',
-        id: 2,
-        username: 'coolguy2003'
-    }
-];
-
 module.exports = {
-    sketchesFixtures,
-    userFixtures
+    sketchesFixtures
 };
