@@ -1,3 +1,5 @@
+export const CACHE_BUST_OPTIONS = { type: 'timestamp' };
+
 export const DESTINATION = {
     CSS: 'main.css',
     DIRECTORY: 'dist/',
