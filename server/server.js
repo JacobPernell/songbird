@@ -1,5 +1,3 @@
-'use strict';
-
 const express = require('express');
 
 const { DEFAULT_PORT } = require(__dirname + '/constants');
