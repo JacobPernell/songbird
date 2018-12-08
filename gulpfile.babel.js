@@ -1,4 +1,5 @@
 import autoprefixer from 'gulp-autoprefixer';
+import cachebust from 'gulp-cache-bust';
 import concatCss from 'gulp-concat-css';
 import cssNano from 'gulp-cssnano';
 import gulp from 'gulp';
@@ -8,6 +9,7 @@ import sass from 'gulp-sass';
 import sourceMaps from 'gulp-sourcemaps';
 
 import {
+    CACHE_BUST_OPTIONS,
     DESTINATION,
     SOURCE,
     TARGET_BROWSERS,
@@ -29,6 +31,7 @@ gulp.task(TASKS.CSS, () => gulp.src(SOURCE.CSS, { allowEmpty: true })
 );
 
 gulp.task(TASKS.HTML, () => gulp.src(SOURCE.HTML, { allowEmpty: true })
+    .pipe(cachebust(CACHE_BUST_OPTIONS))
     .pipe(htmlmin({
         collapseWhitespace: true,
         minifyCSS: true
