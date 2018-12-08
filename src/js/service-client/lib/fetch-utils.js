@@ -15,6 +15,6 @@ export const handlePOST = ({ url, body = {} }) => {
             'Access-Control-Allow-Origin': '*',
             'Content-type': 'application/json'
         },
-        body: JSON.stringify(JSON.parse(body))
+        body: JSON.stringify(body)
     });
 };
