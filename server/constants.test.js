@@ -1,5 +1,3 @@
-'use strict';
-
 const CONSTANTS = require('./constants');
 const {
     DB_ENDPOINT,

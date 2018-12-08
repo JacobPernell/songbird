@@ -1,5 +1,4 @@
-'use strict';
-
+// @flow
 const DEFAULT_PORT = 3000;
 const DIST_DIRECTORY = 'dist';
 const DIST_RELATIVE_PATH = `./${DIST_DIRECTORY}`;
