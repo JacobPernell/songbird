@@ -1,6 +1,11 @@
-import { SEND_REQUEST_BUTTON_SELECTOR } from './lib/constants';
-import { handleClick } from './lib/service-client';
+import {
+    CREATE_USER_BUTTON_SELECTOR,
+    SEND_REQUEST_BUTTON_SELECTOR
+} from './lib/constants';
+import { createUser, generateRequestFromUI } from './lib/service-client';
 
-const button = document.querySelector(SEND_REQUEST_BUTTON_SELECTOR);
+const createUserButton = document.querySelector(CREATE_USER_BUTTON_SELECTOR);
+const sendRequestButton = document.querySelector(SEND_REQUEST_BUTTON_SELECTOR);
 
-button.addEventListener('click', handleClick, false);
+createUserButton.addEventListener('click', createUser, false);
+sendRequestButton.addEventListener('click', generateRequestFromUI, false);

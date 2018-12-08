@@ -7,6 +7,7 @@ export const handleJavaScriptTask = type =>
     gulp
         .src(SOURCE[type], { allowEmpty: true })
         .pipe(webpack({
+            devtool: 'source-map',
             output: {
                 filename: DESTINATION[type]
             }

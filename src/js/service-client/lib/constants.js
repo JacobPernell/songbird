@@ -1,5 +1,6 @@
 import { handleGET, handlePOST } from './fetch-utils';
 
+export const CREATE_USER_BUTTON_SELECTOR = '#create-user';
 export const ENDPOINT_INPUT_SELECTOR = '#endpoint-input';
 export const ERROR_TEXT_CLASS = 'error-text';
 export const FEEDBACK_BLOCK_SELECTOR = '#feedback';
