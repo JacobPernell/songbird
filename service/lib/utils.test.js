@@ -10,7 +10,7 @@ describe('checkForDirectory', () => {
     });
 
     it('should return true if a directory does already exist', () => {
-        expect(utils.checkForDirectory('mongo-utils')).toBe(true);
+        expect(utils.checkForDirectory('service/mongo-utils')).toBe(true);
     });
 });
 

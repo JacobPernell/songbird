@@ -6,12 +6,13 @@ const { handleServerError } = require(__dirname + '/../lib/errors');
 const {
     RESPONSE_MESSAGES: {
         USER_CREATED
-    }
+    },
+    STATIC_ROUTES: { USERS }
 } = require(__dirname + '/constants');
 const Router = express.Router();
 const User = require(__dirname + '/../models/user');
 
-Router.get('/users', (req, res) => {
+Router.get(USERS, (req, res) => {
     User.find({}, (err, data) => {
         if (err) {
             return handleServerError(err);
@@ -21,7 +22,7 @@ Router.get('/users', (req, res) => {
     });
 });
 
-Router.post('/users', bodyParser.json(), (req, res) => {
+Router.post(USERS, bodyParser.json(), (req, res) => {
     const user = new User(req.body);
 
     user.save(err => {

@@ -9,16 +9,16 @@ export const DESTINATION = {
 };
 
 export const SOURCE = {
-    CSS: 'src/**/*.css',
-    HTML: 'src/*.html',
-    JAVASCRIPT: 'src/js/index.js',
-    SASS: 'src/scss/base.scss',
-    SERVICE_CLIENT_JAVASCRIPT: 'src/js/service-client/index.js',
+    CSS: 'client/**/*.css',
+    HTML: 'client/*.html',
+    JAVASCRIPT: 'client/js/index.js',
+    SASS: 'client/scss/base.scss',
+    SERVICE_CLIENT_JAVASCRIPT: 'client/js/service-client/index.js',
     STATIC: [
-        'src/**/*.ico',
-        'src/**/*.jpg',
-        'src/**/*.png',
-        'src/**/*.svg'
+        'client/**/*.ico',
+        'client/**/*.jpg',
+        'client/**/*.png',
+        'client/**/*.svg'
     ]
 };
 
@@ -47,6 +47,6 @@ export const TASKS = {
 };
 
 export const WATCH_FILES = {
-    JAVASCRIPT: 'src/**/*.js',
-    SASS: 'src/**/*.scss'
+    JAVASCRIPT: 'client/**/*.js',
+    SASS: 'client/**/*.scss'
 };

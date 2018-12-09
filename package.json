@@ -7,10 +7,10 @@
     "flow": "flow",
     "gulp": "gulp default",
     "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
-    "mongo": "node mongo-utils/init-db.js && mongod --dbpath=./db --smallfiles",
+    "mongo": "node ./service/mongo-utils/init-db.js && mongod --dbpath=./db --smallfiles",
     "nodemon": "nodemon",
-    "postinstall": "node mongo-utils/init-db.js",
-    "server": "node index.js",
+    "postinstall": "node ./service/mongo-utils/init-db.js",
+    "server": "node ./service/index.js",
     "test": "jest --no-cache ."
   },
   "precommit": [
