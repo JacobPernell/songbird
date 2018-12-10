@@ -4,6 +4,16 @@ const RESPONSE_MESSAGES = {
     USER_CREATED: 'User created'
 };
 
+const STATIC_PATHS = {
+    SERVICE_CLIENT: '/../../dist/service-client.html'
+};
+
+const STATIC_ROUTES = {
+    SERVICE_CLIENT: '/service-client',
+    SKETCHES: '/sketches',
+    USERS: '/users'
+};
+
 const sketchesFixtures = [
     {
         id: 162,
@@ -60,5 +70,7 @@ const sketchesFixtures = [
 
 module.exports = {
     RESPONSE_MESSAGES,
+    STATIC_PATHS,
+    STATIC_ROUTES,
     sketchesFixtures
 };
