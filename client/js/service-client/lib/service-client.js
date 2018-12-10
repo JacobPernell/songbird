@@ -31,14 +31,9 @@ const formatUserData = () => {
     const password = 'hunter2';
 
     return {
-        authentication: {
-            basic: {
-                username,
-                password
-            }
-        },
-        username,
-        email
+        email,
+        password,
+        username
     };
 };
 
