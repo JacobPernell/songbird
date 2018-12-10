@@ -1,5 +1,15 @@
 'use strict';
 
+/*
+
+4. What is necessary when creating a password?
+    At least 6 chars, one capital letter, and one number
+
+6. What is the max length of an email field?
+    64 (?)
+
+*/
+
 const RESPONSE_MESSAGES = {
     USER_CREATED: 'User created'
 };
