@@ -1,6 +1,8 @@
 'use strict';
 
 const {
+    emailCharactersValidator,
+    emailTypeValidator,
     passwordCharactersValidator,
     passwordLengthValidator,
     passwordTypeValidator,
@@ -8,6 +10,58 @@ const {
     usernameLengthValidator,
     usernameTypeValidator
 } = require(__dirname + '/validators');
+
+describe('emailCharactersValidator', () => {
+    it('should have a handler property', () => {
+        expect(emailCharactersValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof emailCharactersValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(emailCharactersValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof emailCharactersValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(emailCharactersValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "object"', () => {
+        expect(typeof emailCharactersValidator.source).toBe('object');
+    });
+});
+
+describe('emailTypeValidator', () => {
+    it('should have a handler property', () => {
+        expect(emailTypeValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof emailTypeValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(emailTypeValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof emailTypeValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(emailTypeValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "string"', () => {
+        expect(typeof emailTypeValidator.source).toBe('string');
+    });
+});
 
 describe('passwordCharactersValidator', () => {
     it('should have a handler property', () => {

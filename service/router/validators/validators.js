@@ -6,9 +6,22 @@ const {
     lengthValidator
 } = require(__dirname + '/utils');
 const {
+    EMAIL_REQUIREMENTS,
     PASSWORD_REQUIREMENTS,
     USERNAME_REQUIREMENTS
 } = require(__dirname + '/constants');
+
+const emailCharactersValidator = {
+    handler: acceptedCharactersValidator,
+    message: 'email is wrong',
+    source: EMAIL_REQUIREMENTS.ACCEPTED_CHARACTER_REGEX
+};
+
+const emailTypeValidator = {
+    handler: fieldTypeValidator,
+    message: 'email is not a string',
+    source: EMAIL_REQUIREMENTS.PRIMITIVE
+};
 
 const passwordCharactersValidator = {
     handler: acceptedCharactersValidator,
@@ -47,6 +60,8 @@ const usernameTypeValidator = {
 };
 
 module.exports = {
+    emailCharactersValidator,
+    emailTypeValidator,
     passwordCharactersValidator,
     passwordLengthValidator,
     passwordTypeValidator,

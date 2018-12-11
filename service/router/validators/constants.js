@@ -1,11 +1,8 @@
 'use strict';
 
+
 const EMAIL_REQUIREMENTS = {
-    ACCEPTED_CHARACTER_REGEX: /^[a-zA-Z0-9-_]+$/,
-    LENGTH: {
-        MAX: 345,
-        MIN: 4
-    },
+    ACCEPTED_CHARACTER_REGEX: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, // eslint-disable-line max-len
     PRIMITIVE: 'string'
 };
 
