@@ -1,10 +1,145 @@
 'use strict';
 
 const {
+    emailCharactersValidator,
+    emailTypeValidator,
+    passwordCharactersValidator,
+    passwordLengthValidator,
+    passwordTypeValidator,
     usernameCharactersValidator,
     usernameLengthValidator,
     usernameTypeValidator
 } = require(__dirname + '/validators');
+
+describe('emailCharactersValidator', () => {
+    it('should have a handler property', () => {
+        expect(emailCharactersValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof emailCharactersValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(emailCharactersValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof emailCharactersValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(emailCharactersValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "object"', () => {
+        expect(typeof emailCharactersValidator.source).toBe('object');
+    });
+});
+
+describe('emailTypeValidator', () => {
+    it('should have a handler property', () => {
+        expect(emailTypeValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof emailTypeValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(emailTypeValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof emailTypeValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(emailTypeValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "string"', () => {
+        expect(typeof emailTypeValidator.source).toBe('string');
+    });
+});
+
+describe('passwordCharactersValidator', () => {
+    it('should have a handler property', () => {
+        expect(passwordCharactersValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof passwordCharactersValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(passwordCharactersValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof passwordCharactersValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(passwordCharactersValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "object"', () => {
+        expect(typeof passwordCharactersValidator.source).toBe('object');
+    });
+});
+
+describe('passwordLengthValidator', () => {
+    it('should have a handler property', () => {
+        expect(passwordLengthValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof passwordLengthValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(passwordLengthValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof passwordLengthValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(passwordLengthValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "object"', () => {
+        expect(typeof passwordLengthValidator.source).toBe('object');
+    });
+});
+
+describe('passwordTypeValidator', () => {
+    it('should have a handler property', () => {
+        expect(passwordTypeValidator.handler).toBeTruthy();
+    });
+
+    it('should have a have a handler property of type "function"', () => {
+        expect(typeof passwordTypeValidator.handler).toBe('function');
+    });
+
+    it('should have a message property', () => {
+        expect(passwordTypeValidator.message).toBeTruthy();
+    });
+
+    it('should have a message property of type "string"', () => {
+        expect(typeof passwordTypeValidator.message).toBe('string');
+    });
+
+    it('should have a source property', () => {
+        expect(passwordTypeValidator.source).toBeTruthy();
+    });
+
+    it('should have a source property of type "string"', () => {
+        expect(typeof passwordTypeValidator.source).toBe('string');
+    });
+});
 
 describe('usernameCharactersValidator', () => {
     it('should have a handler property', () => {
@@ -32,7 +167,7 @@ describe('usernameCharactersValidator', () => {
     });
 });
 
-describe.skip('usernameLengthValidator', () => {
+describe('usernameLengthValidator', () => {
     it('should have a handler property', () => {
         expect(usernameLengthValidator.handler).toBeTruthy();
     });
@@ -58,7 +193,7 @@ describe.skip('usernameLengthValidator', () => {
     });
 });
 
-describe.skip('usernameTypeValidator', () => {
+describe('usernameTypeValidator', () => {
     it('should have a handler property', () => {
         expect(usernameTypeValidator.handler).toBeTruthy();
     });
@@ -80,6 +215,6 @@ describe.skip('usernameTypeValidator', () => {
     });
 
     it('should have a source property of type "object"', () => {
-        expect(typeof usernameTypeValidator.source).toBe('object');
+        expect(typeof usernameTypeValidator.source).toBe('string');
     });
 });

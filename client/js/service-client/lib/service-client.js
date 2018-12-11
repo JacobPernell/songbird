@@ -28,7 +28,7 @@ export const createUser = e => {
 const formatUserData = () => {
     const username = (randomName(FIRST_NAMES) + generateNumber()).substring(0, 19);
     const email = `${username}@email.com`;
-    const password = 'hunter2';
+    const password = 'hunter22';
 
     return {
         email,
