@@ -16,6 +16,20 @@ describe('acceptedCharactersValidator', () => {
     it('should return false if the input field does not match the input regex', () => {
         expect(acceptedCharactersValidator('string0_-!', /^[a-zA-Z0-9-_]+$/)).toBe(false);
     });
+
+    it('should return true if the input field matches the input regex', () => {
+        expect(acceptedCharactersValidator(
+            '1234567890qwertyuiopasdfghjklzxcvbnm-_!?;:!@#$%^&*()',
+            /^[a-zA-Z0-9-_!?;:!@#$%^&*()]+$/
+        )).toBe(true);
+    });
+
+    it('should return false if the input field does not match the input regex', () => {
+        expect(acceptedCharactersValidator(
+            '1234567890qwertyuiopasdfghjklzxcvbnm-_!?;:!@#$%^&*()`',
+            /^[a-zA-Z0-9-_!?;:!@#$%^&*()]+$/
+        )).toBe(false);
+    });
 });
 
 describe('fieldTypeValidator', () => {

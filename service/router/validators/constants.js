@@ -3,7 +3,7 @@
 const EMAIL_REQUIREMENTS = {
     ACCEPTED_CHARACTER_REGEX: /^[a-zA-Z0-9-_]+$/,
     LENGTH: {
-        MAX: 100,
+        MAX: 345,
         MIN: 4
     },
     PRIMITIVE: 'string'
@@ -12,7 +12,7 @@ const EMAIL_REQUIREMENTS = {
 const PASSWORD_REQUIREMENTS = {
     ACCEPTED_CHARACTER_REGEX: /^[a-zA-Z0-9-_!?;:!@#$%^&*()]+$/,
     LENGTH: {
-        MAX: 30,
+        MAX: 128,
         MIN: 8
     },
     PRIMITIVE: 'string'
