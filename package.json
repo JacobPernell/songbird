@@ -1,11 +1,13 @@
 {
-  "name": "midi-web-app",
+  "name": "songbird",
   "version": "0.1.0",
   "description": "create, save, share",
   "main": "index.js",
   "scripts": {
+    "build": "parcel build ./client/index.html",
     "lint": "eslint --ext=.js,.html . && sass-lint -c -v -q",
-    "test": "jest --no-cache ."
+    "test": "jest --no-cache . --passWithNoTests",
+    "watch": "parcel ./client/index.html -p 3000"
   },
   "precommit": [
     "lint"
@@ -31,6 +33,8 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
     "eslint": "^4.19.1",
     "eslint-config-mosaic": "^0.1.2",
     "eslint-plugin-flowtype": "^3.2.0",
@@ -41,7 +45,8 @@
     "eslint-plugin-standard": "^3.1.0",
     "flow-bin": "^0.87.0",
     "jest": "^23.6.0",
-    "parcel": "^1.11.0",
+    "node-sass": "^4.11.0",
+    "parcel-bundler": "^1.11.0",
     "pre-commit": "^1.2.2",
     "pre-push": "^0.1.1",
     "sass-lint": "^1.12.1"
