@@ -5,14 +5,10 @@ Web-based MIDI piano roll editor for quick music sketches.
 Start the server by doing the following:
 
 1.  Install [node](https://nodejs.org/en/download/)
-2.  Install [mongodb](https://treehouse.github.io/installation-guides/mac/mongo-mac.html)
-    * If you have issues installing mongo, try the steps found [here](https://github.com/Homebrew/brew/issues/3228#issuecomment-332679274)
-3.  `npm install`
-4.  `npm run mongo`
-    * This always needs to happen before the server is run
-5.  `npm run gulp`
-    * This builds the front end
-6.  `npm run server`
+2.  `npm install`
+3.  Develop
+    - `npm run build` to build
+    - `npm run watch` for development & hot module
 
 If you'd like to use a specific port, use the `PORT` environmental variable.
 
